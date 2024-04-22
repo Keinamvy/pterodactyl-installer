@@ -109,6 +109,9 @@ ptdl_dl() {
 
   curl -Lo panel.tar.gz "$PANEL_DL_URL"
   tar -xzvf panel.tar.gz
+  cd /var/www/pterodactyl
+  npm i
+  pnpm ship
   chmod -R 755 storage/* bootstrap/cache/
 
   cp .env.example .env
